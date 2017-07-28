@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <unistd.h>
+#include <sys/wait.h>
 
 #include <dlfcn.h>
 #include <err.h>
