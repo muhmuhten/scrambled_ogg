@@ -10,6 +10,6 @@ clean:
 
 .SUFFIXES:	.dylib .so
 .c.dylib:
-	cc -pipe -Wall -pedantic -Oz -dynamiclib -o $@ $<
+	cc -pipe -Wall -pedantic -Oz -dynamiclib -logg -o $@ $<
 .c.so:
 	cc -pipe -Wall -pedantic -Oz -s -shared -fPIC -I/usr/local/include -o $@ $<
