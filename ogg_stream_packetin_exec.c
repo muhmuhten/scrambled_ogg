@@ -20,9 +20,9 @@ int ogg_stream_packetin(ogg_stream_state *os, ogg_packet *op) {
 		return next_ogg_stream_packetin(os, op);
 
 	/* nothing to be done if we don't *have* a mangler */
-	char *mangler = getenv("OGG_MANGLER");
+	char *mangler = getenv("TAG_MANGLER");
 	if (mangler == NULL)
-		return next_ogg_stream_packetin(os, op);
+		errx(11, "ogg_stream_packetin/exec loaded, but no TAGS_MANGLER");
 
 	int pc[2], cp[2];
 	if (pipe(pc) == -1 || pipe(cp) == -1)
